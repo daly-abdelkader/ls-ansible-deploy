@@ -7,7 +7,7 @@
    group: logstash
    mode: 0644
   with_fileglob:
-   - ../../../../logstash/config/*.j2
+   - config/*.j2
   become: yes
   notify: restart_logstash
 
@@ -19,7 +19,7 @@
    group: logstash 
    mode: 0644
   with_fileglob:
-   - ../../../../logstash/pipelines/*.j2
+   - pipelines/*.j2
   become: yes
   notify: restart_logstash
 
@@ -34,7 +34,7 @@
 
 - name: copy dsl queries
   copy:
-   src: ../../../../logstash/pipelines/queries/
+   src: queries/
    dest: /etc/logstash/conf.d/queries
    owner: logstash
    group: logstash
