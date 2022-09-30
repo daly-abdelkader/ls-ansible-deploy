@@ -1,0 +1,11 @@
+s file is where you define your pipelines. You can define multiple.
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+
+- pipeline.id: pipe-test-1
+  pipeline.workers: {{ls_workers}}
+  path.config: "/etc/logstash/conf.d/test-file.conf"
+
+- pipeline.id: pipe-test-2
+  pipeline.workers: {{ls_workers}}
+  path.config: "/etc/logstash/conf.d/test-file-2.conf"
