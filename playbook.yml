@@ -1,0 +1,4 @@
+- name: Deploy Logstash playbook
+  hosts: logstash
+  roles:
+   - deploy_logstash
