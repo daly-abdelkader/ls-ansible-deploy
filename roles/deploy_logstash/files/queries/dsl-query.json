@@ -1,0 +1,8 @@
+{
+   "query":{
+      "match_all":{}
+   }
+  "sort" : [
+      {"price" : {"order" : "asc", "mode" : "avg"}}
+   ]
+}

@@ -1,0 +1,17 @@
+input{
+        file {
+                path => "{{ls_inputs_dir}}/*-01.csv"
+                start_position => "beginning"
+		mode => "tail"
+        }
+}
+
+filter {
+
+}
+
+output {
+        stdout {
+                codec => rubydebug
+        }
+}
