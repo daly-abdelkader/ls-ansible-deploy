@@ -1,0 +1,4 @@
+- src: https://github.com/daly-abdelkader/deploy-logstash.git
+  scm: git
+  version: main
+  name: deploy_logstash
