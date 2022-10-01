@@ -8,8 +8,8 @@
    mode: 0644
   with_items:
    - pipelines.yml
-   - jvm.options
-   - logstash.yml
+ #  - jvm.options
+ #  - logstash.yml
   become: yes
   notify: restart_logstash
 
