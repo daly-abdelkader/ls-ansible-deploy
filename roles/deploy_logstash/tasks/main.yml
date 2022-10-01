@@ -1,13 +1,15 @@
 ---
 - name: copy ls configurations files
   template:
-   src: "{{ item }}"
-   dest: /etc/logstash/{{ item | basename | regex_replace('\.j2$', '') }}
+   src: "config/{{ item }}.j2"
+   dest: /etc/logstash/{{ item }}
    owner: logstash
    group: logstash
    mode: 0644
-  with_fileglob:
-   - config/*.j2
+  with_items:
+   - pipelines.yml
+   - jvm.options
+   - logstash.yml
   become: yes
   notify: restart_logstash
 
